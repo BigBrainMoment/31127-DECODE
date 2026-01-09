@@ -1,0 +1,13 @@
+Control Hub
+Motor 1 - frontLeft(reversed)
+Motor 2 - backLeft (reversed)
+Servo 0 - leftServo
+I2C 3 - pinpoint
+
+Expansion Hub
+Motor 0 - flywheel
+Motor 1 - frontRight
+Motor 2 - backRight
+Servo 0 - rightServo
+
+names listed are config names
