@@ -48,11 +48,9 @@ public class teleop extends LinearOpMode {
         fly.setDirection(DcMotorSimple.Direction.REVERSE);
         ls.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        rs.setPower(-.67);
-        ls.setPower(-.67);
+
 
         flywheel = hardwareMap.get(DcMotorEx.class, "flywheel");
-        waitForStart();
 
 
 
@@ -62,6 +60,9 @@ public class teleop extends LinearOpMode {
 
 
         while(opModeIsActive()) {
+
+            rs.setPower(-.67);
+            ls.setPower(-.67);
             // Calculations for drive train
             double y = gamepad1.left_stick_y; // Remember, Y stick value is reversed
             double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
@@ -105,7 +106,7 @@ public class teleop extends LinearOpMode {
                 rs.setPower(.67);
                 ls.setPower(.67);
                 timer.reset();
-                while (timer.milliseconds() <= 300){}
+                while (timer.milliseconds() <= 400){}
                 rs.setPower(-.67);
                 ls.setPower(-.67);
             }
@@ -132,12 +133,12 @@ public class teleop extends LinearOpMode {
                 run = false;
             } else if (far){
 /// TUNE THIS VALUE TO THE SPEED OF FAR SHOOT
-                targetV = 1800;
+                targetV = 1780;
 
 
             } else {
 /// TUNE THIS VALUE TO THE SPEED OF CLOSE SHOOT
-                targetV = 1111;
+                targetV = 1200;
 
 
                 while (timer.milliseconds() <= 500){
