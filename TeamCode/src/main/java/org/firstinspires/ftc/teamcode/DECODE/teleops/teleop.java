@@ -89,7 +89,7 @@ public class teleop extends LinearOpMode {
 /// REMIND KENNY THIS CHANGED
             //speed settings
             if (gamepad1.dpad_up) {
-                setSpeed = .5;
+                setSpeed = .3;
             }
             if (gamepad1.dpad_right) {
                 setSpeed = 1;
@@ -133,12 +133,12 @@ public class teleop extends LinearOpMode {
                 run = false;
             } else if (far){
 /// TUNE THIS VALUE TO THE SPEED OF FAR SHOOT
-                targetV = 1780;
+                targetV = 1800;
 
 
             } else {
 /// TUNE THIS VALUE TO THE SPEED OF CLOSE SHOOT
-                targetV = 1200;
+                targetV = 1350;
 
 
                 while (timer.milliseconds() <= 500){

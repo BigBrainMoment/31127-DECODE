@@ -67,7 +67,7 @@ public class nearBlue extends LinearOpMode {
 
         ElapsedTime myTimer = new ElapsedTime();
         if (opModeIsActive()) {
-            fly.setPower(.54);
+            fly.setPower(.60);
 
 //        Run
             timer.reset();
@@ -93,7 +93,7 @@ public class nearBlue extends LinearOpMode {
 
             for (int i = 0; i <= 3; i++) {
                 timer.reset();
-                while (timer.milliseconds() <= 1200) {
+                while (timer.milliseconds() <= 1000) {
 
                 }
 
