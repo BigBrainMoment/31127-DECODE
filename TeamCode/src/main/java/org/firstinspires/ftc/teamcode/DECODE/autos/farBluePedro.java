@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-public class farBlue extends OpMode {
+public class farBluePedro extends OpMode {
     DcMotor FL, FR, BL, BR;
     CRServo ls, rs;
     DcMotorEx flywheel;

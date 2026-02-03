@@ -9,14 +9,14 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
- * TESTER; MADE FOR ME :P
+ * THE REAL TELEOP
  */
 @TeleOp
 public class single extends LinearOpMode {
     int count = 0; // helpful; no more holding down the shooting button
     double setSpeed = 1; // Controls for Driving speed
     boolean run = false; // Fail safe, can not push when flywheel is off
-    boolean far = false; // Shooting farther
+    boolean far = false, near = false; // Shooting farther
 
     // Variables for the flywheel PID
     public static float targetV = 0;
@@ -51,7 +51,6 @@ public class single extends LinearOpMode {
 
 
         flywheel = hardwareMap.get(DcMotorEx.class, "flywheel");
-        waitForStart();
 
 
 
@@ -61,6 +60,7 @@ public class single extends LinearOpMode {
 
 
         while(opModeIsActive()) {
+
             rs.setPower(-.67);
             ls.setPower(-.67);
             // Calculations for drive train
@@ -89,7 +89,7 @@ public class single extends LinearOpMode {
 /// REMIND KENNY THIS CHANGED
             //speed settings
             if (gamepad1.dpad_up) {
-                setSpeed = .5;
+                setSpeed = .3;
             }
             if (gamepad1.dpad_right) {
                 setSpeed = 1;
@@ -116,10 +116,17 @@ public class single extends LinearOpMode {
 
             // Counter for far shooting
             if (gamepad1.dpad_left){
-                far = true;
+                near = true;
             } else if (gamepad1.dpadLeftWasReleased()){
+                near = false;
+            }
+
+            if (gamepad1.dpad_right){
+                far = true;
+            } else if (gamepad1.dpadRightWasReleased()){
                 far = false;
             }
+
             // Counter for left bumper
             if (gamepad1.leftBumperWasPressed()) {
                 count++;
@@ -133,12 +140,14 @@ public class single extends LinearOpMode {
                 run = false;
             } else if (far){
 /// TUNE THIS VALUE TO THE SPEED OF FAR SHOOT
-                targetV = 1780;
+                targetV = 1800;
 
 
-            } else {
+            } else if (near){
+                targetV = 1000;
+            }else {
 /// TUNE THIS VALUE TO THE SPEED OF CLOSE SHOOT
-                targetV = 1200;
+                targetV = 1350;
 
 
                 while (timer.milliseconds() <= 500){

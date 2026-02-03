@@ -16,13 +16,13 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Constants {
     public static FollowerConstants followerConstants = new FollowerConstants()
-            .mass(8.4)
+            .mass(8.4) //kg
             .forwardZeroPowerAcceleration(-34.138)
-            .lateralZeroPowerAcceleration(-55.933)
+            .lateralZeroPowerAcceleration(-60.676)
 
-            //.translationalPIDFCoefficients(new PIDFCoefficients(0.1, 0, 0.011, 0.024))
-            //.headingPIDFCoefficients(new PIDFCoefficients(0.8, 0.0, 0.011, 0.024))
-            //.drivePIDFCoefficients(new FilteredPIDFCoefficients(0.0,0,0.0,0.6,0.024))
+            .translationalPIDFCoefficients(new PIDFCoefficients(0.1, 0, 0.011, 0.024))
+            .headingPIDFCoefficients(new PIDFCoefficients(0.8, 0.0, 0.011, 0.024))
+            .drivePIDFCoefficients(new FilteredPIDFCoefficients(0.0,0,0.0,0.6,0.024))
             .centripetalScaling(0.05);
 
 
@@ -37,22 +37,23 @@ public class Constants {
                 .build();
     }
     public static PinpointConstants localizerConstants = new PinpointConstants()
-            .forwardPodY(2)
-            .strafePodX(4)
+            .forwardPodY(1.8)
+            .strafePodX(-4.8)
             .distanceUnit(DistanceUnit.INCH)
             .hardwareMapName("pinpoint")
             .encoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD)
             .forwardEncoderDirection(GoBildaPinpointDriver.EncoderDirection.REVERSED)
-            .strafeEncoderDirection(GoBildaPinpointDriver.EncoderDirection.FORWARD);
+            .strafeEncoderDirection(GoBildaPinpointDriver.EncoderDirection.REVERSED);
     public static MecanumConstants driveConstants = new MecanumConstants()
             .maxPower(1)
-            .xVelocity(78.79)
+            .xVelocity(78.750)
             .yVelocity(63.086)
 
             .rightFrontMotorName("frontRight")
             .rightRearMotorName("backRight")
-            .leftRearMotorName("backLeft")
             .leftFrontMotorName("frontLeft")
+            .leftRearMotorName("backLeft")
+
 
             .leftFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)

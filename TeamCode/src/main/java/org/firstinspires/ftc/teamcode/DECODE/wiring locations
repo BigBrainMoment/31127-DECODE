@@ -1,6 +1,6 @@
 Control Hub
-Motor 1 - frontLeft(reversed)
-Motor 2 - backLeft (reversed)
+Motor 1 - frontLeft
+Motor 2 - backLeft
 Servo 0 - leftServo
 I2C 3 - pinpoint
 

@@ -16,7 +16,7 @@ public class teleop extends LinearOpMode {
     int count = 0; // helpful; no more holding down the shooting button
     double setSpeed = 1; // Controls for Driving speed
     boolean run = false; // Fail safe, can not push when flywheel is off
-    boolean far = false; // Shooting farther
+    boolean far = false, near = false; // Shooting farther
 
     // Variables for the flywheel PID
     public static float targetV = 0;
@@ -116,10 +116,17 @@ public class teleop extends LinearOpMode {
 
             // Counter for far shooting
             if (gamepad2.dpad_left){
-                far = true;
+                near = true;
             } else if (gamepad2.dpadLeftWasReleased()){
+                near = false;
+            }
+
+            if (gamepad2.dpad_right){
+                far = true;
+            } else if (gamepad2.dpadRightWasReleased()){
                 far = false;
             }
+
             // Counter for left bumper
             if (gamepad2.leftBumperWasPressed()) {
                 count++;
@@ -136,7 +143,9 @@ public class teleop extends LinearOpMode {
                 targetV = 1800;
 
 
-            } else {
+            } else if (near){
+                targetV = 1000;
+            }else {
 /// TUNE THIS VALUE TO THE SPEED OF CLOSE SHOOT
                 targetV = 1350;
 

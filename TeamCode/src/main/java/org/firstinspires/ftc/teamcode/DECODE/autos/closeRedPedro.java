@@ -1,10 +1,6 @@
 package org.firstinspires.ftc.teamcode.DECODE.autos;
 
 import com.pedropathing.follower.Follower;
-import com.pedropathing.geometry.BezierLine;
-import com.pedropathing.geometry.Pose;
-import com.pedropathing.paths.Path;
-import com.pedropathing.paths.PathChain;
 import com.pedropathing.util.Timer;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
@@ -15,7 +11,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous(name = "TESTred", group = "Examples")
 @Disabled
-public class closeRed extends OpMode {
+public class closeRedPedro extends OpMode {
 
     private Follower follower;
     private Timer pathTimer, actionTimer, opmodeTimer;

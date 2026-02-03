@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode.DECODE.autos;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -12,7 +11,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous
 @Disabled
-public class closeBlue extends OpMode {
+public class closeBluePedro extends OpMode {
 
     DcMotorEx FL, FR, BL, BR;
     CRServo ls, rs;
