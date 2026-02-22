@@ -147,7 +147,7 @@ public class single extends LinearOpMode {
                 targetV = 1000;
             }else {
 /// TUNE THIS VALUE TO THE SPEED OF CLOSE SHOOT
-                targetV = 1350;
+                targetV = 1320;
 
 
                 while (timer.milliseconds() <= 500){

@@ -12,22 +12,11 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 @Autonomous
 @Disabled
 public class closeBluePedro extends OpMode {
+    DcMotorEx FL, FR, BL, BR; CRServo ls, rs; DcMotorEx flywheel;
 
-    DcMotorEx FL, FR, BL, BR;
-    CRServo ls, rs;
-
-    public static float targetV = 500;
-    double kP = 0.1, kV = 0.00043;
-    double error;
-
+    public static float targetV = 500; double kP = 0.1, kV = 0.00043; double error;
 
     private static ElapsedTime timer = new ElapsedTime();
-
-
-
-
-    DcMotorEx flywheel;
-
 
     @Override
     public void init(){
@@ -59,13 +48,6 @@ public class closeBluePedro extends OpMode {
 
     @Override
     public void start(){
-
-
-
-        error = targetV - flywheel.getVelocity();
-
-        flywheel.setPower(kP * error + kV * targetV);
-
 //        Run
         timer.reset();
         FL.setPower(0.5);
@@ -146,12 +128,6 @@ public class closeBluePedro extends OpMode {
         telemetry.addData("actual velocity", flywheel.getVelocity());
         telemetry.update();
 
-
-    }
-
-    @Override
-    public void stop() {
-        return;
     }
 
 }

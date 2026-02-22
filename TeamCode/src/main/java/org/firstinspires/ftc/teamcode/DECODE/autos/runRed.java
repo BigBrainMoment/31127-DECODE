@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.DECODE.autos;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,6 +9,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 /// THIS ONE IS THE WORKING FAR AUTO
 @Autonomous (name="farRED", group="Linear OpMode")
+@Disabled
 public class runRed extends LinearOpMode {
     DcMotor FL;
     DcMotor FR;

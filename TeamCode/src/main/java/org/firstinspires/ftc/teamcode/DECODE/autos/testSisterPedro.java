@@ -19,7 +19,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
 
-@Autonomous(name = "testPedro")
+@Autonomous(name = "testPedro",group = "tests")
 public class testSisterPedro extends OpMode {
     DcMotorEx FL, FR, BL, BR;
 

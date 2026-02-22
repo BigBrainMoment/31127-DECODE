@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /// THIS ONE IS THE WORKING FAR AUTO
-@Autonomous (name="farBLUE", group="Linear OpMode")
+@Autonomous (name="far", group="Linear OpMode")
 public class runBlue extends LinearOpMode {
     DcMotor FL;
     DcMotor FR;
@@ -49,13 +49,29 @@ public class runBlue extends LinearOpMode {
         waitForStart();
         if (isStopRequested()) return;
 
-        ElapsedTime myTimer = new ElapsedTime();
+
+
         if (opModeIsActive()) {
 /**
  * HERE IS WHERE YOU CHANGE MOTOR SPEED
  */
-            fly.setPower(0.87);
-            while (timer.milliseconds() <= 3000){
+            fly.setPower(0.71);
+            timer.reset();
+            FL.setPower(-0.5);
+            FR.setPower(-0.5);
+            BL.setPower(-0.5);
+            BR.setPower(-0.5);
+
+            while (timer.milliseconds() <= 200){
+
+            }
+
+            FL.setPower(0);
+            FR.setPower(0);
+            BL.setPower(0);
+            BR.setPower(0);
+
+            while (timer.milliseconds() <= 2000){
 
             }
 //        Run
@@ -64,7 +80,7 @@ public class runBlue extends LinearOpMode {
 
             for (int i = 0; i <= 3; i++) {
                 timer.reset();
-                while (timer.milliseconds() <= 2000) {
+                while (timer.milliseconds() <= 2500) {
 
                 }
 

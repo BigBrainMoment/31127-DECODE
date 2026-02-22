@@ -20,9 +20,12 @@ public class Constants {
             .forwardZeroPowerAcceleration(-34.138)
             .lateralZeroPowerAcceleration(-60.676)
 
-            .translationalPIDFCoefficients(new PIDFCoefficients(0.1, 0, 0.011, 0.024))
-            .headingPIDFCoefficients(new PIDFCoefficients(0.8, 0.0, 0.011, 0.024))
-            .drivePIDFCoefficients(new FilteredPIDFCoefficients(0.0,0,0.0,0.6,0.024))
+            .translationalPIDFCoefficients(new PIDFCoefficients(0, 0, 0, 0))
+            .headingPIDFCoefficients(new PIDFCoefficients(0.5, 0.1, 0, 0))
+            .drivePIDFCoefficients(new FilteredPIDFCoefficients(0.1,0.0,0.01,0.6,0.0))
+            //.translationalPIDFCoefficients(new PIDFCoefficients(0.1, 0, 0.011, 0.024))
+            //.headingPIDFCoefficients(new PIDFCoefficients(0.8, 0.0, 0.011, 0.024))
+            //.drivePIDFCoefficients(new FilteredPIDFCoefficients(0.0,0,0.0,0.6,0.024))
             .centripetalScaling(0.05);
 
 
@@ -46,8 +49,8 @@ public class Constants {
             .strafeEncoderDirection(GoBildaPinpointDriver.EncoderDirection.REVERSED);
     public static MecanumConstants driveConstants = new MecanumConstants()
             .maxPower(1)
-            .xVelocity(78.750)
-            .yVelocity(63.086)
+            .xVelocity(80.70)
+            .yVelocity(70.23)
 
             .rightFrontMotorName("frontRight")
             .rightRearMotorName("backRight")
@@ -59,7 +62,5 @@ public class Constants {
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
             .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
             .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD);
-
-
 
 }
